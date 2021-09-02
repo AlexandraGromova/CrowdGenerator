@@ -3,4 +3,6 @@
     <string name="makeup_variants">Makeup Variants</string>
     <string name="min_count">MIN</string>
     <string name="max_name">MAX</string>
+    <string name="text_null">0</string>
+    <string name="textview_text">Ждем ваших макияжей!</string>
 </resources>

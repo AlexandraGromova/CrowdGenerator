@@ -10,14 +10,14 @@ class MakeupGroupGenerator(private val maxMakeupCount: Int, private val minMakeu
     fun generator() {
         var i = minMakeupCount
         var j = 0
-        while (i <= maxMakeupCount) {
+        while (i < maxMakeupCount) {
             val makeup = Makeup(
                 storageOfOptions.lips.random(),
                 storageOfOptions.eyes.random(),
                 storageOfOptions.blush.random()
             )
             makeupList.add(j, makeup)
-            Log.v(TAG, "rrr $makeup $i")
+            Log.v(TAG, "$makeup $i")
             j++
             i++
         }

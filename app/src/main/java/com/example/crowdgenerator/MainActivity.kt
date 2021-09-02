@@ -1,6 +1,5 @@
 package com.example.crowdgenerator
 
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,7 +20,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         minEditTextView = findViewById(R.id.minTextView)
         textView = findViewById(R.id.textView2)
         buttonMakeupVariants = findViewById(R.id.button_makeup_variants)
-
         buttonMakeupVariants.setOnClickListener {
             Log.v(TAG, "Все хорошо")
             val maxMakeupCount = try {
