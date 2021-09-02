@@ -21,15 +21,33 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         minEditTextView = findViewById(R.id.minTextView)
         textView = findViewById(R.id.textView2)
         buttonMakeupVariants = findViewById(R.id.button_makeup_variants)
+
         buttonMakeupVariants.setOnClickListener {
-            val maxMakeupCount = maxEditTextView.text.toString().toInt()
-            val minMakeupCount = minEditTextView.text.toString().toInt()
+            Log.v(TAG, "Все хорошо")
+            val maxMakeupCount = try {
+                maxEditTextView.text.toString().toInt()
+            } catch (e: NumberFormatException) {
+                0
+            }
+            val minMakeupCount = try {
+                minEditTextView.text.toString().toInt()
+            } catch (e: NumberFormatException) {
+                0
+            }
+            if (maxEditTextView.text.toString() < minEditTextView.text.toString()) {
+                val toast = Toast.makeText(
+                    this,
+                    "Неверно введен промежуток \n Попробойте еще раз",
+                    Toast.LENGTH_SHORT
+                )
+                toast.show()
+            }
             Log.v(TAG, "$maxMakeupCount")
             val makeupGroupGenerator = MakeupGroupGenerator(maxMakeupCount, minMakeupCount)
             makeupGroupGenerator.generator()
-            val preparationOfText = PreparationOfText(makeupGroupGenerator.makeupList)
-            preparationOfText.preparation()
-            textView.text = preparationOfText.finalText
+            val text = Text(makeupGroupGenerator.makeupList)
+            text.preparation()
+            textView.text = text.finalText
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.example.crowdgenerator
 
-class PreparationOfText( var list: MutableList<Makeup>) {
+class Text(var list: MutableList<Makeup>) {
     var finalText ="All makeup ${list.size} \n"
     fun preparation() {
        var i = 0
