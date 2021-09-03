@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private lateinit var minEditTextView: EditText
     private lateinit var textView: TextView
     private lateinit var buttonMakeupVariants: Button
-// Баг
+// Багыфвыфвфвфвыфвфвф
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         maxEditTextView = findViewById(R.id.maxTextView)
