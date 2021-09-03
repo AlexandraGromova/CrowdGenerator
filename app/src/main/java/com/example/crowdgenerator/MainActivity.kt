@@ -9,7 +9,7 @@ import android.widget.*
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
-
+ //sfdsfsfdfsdfsfd
     private lateinit var maxEditTextView: EditText
     private lateinit var minEditTextView: EditText
     private lateinit var textView: TextView
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         minEditTextView = findViewById(R.id.minTextView)
         textView = findViewById(R.id.textView2)
         buttonMakeupVariants = findViewById(R.id.button_makeup_variants)
-//Sasha!!!
+//Sasha!!!yhhhhh
         buttonMakeupVariants.setOnClickListener {
             val maxMakeupCount = maxEditTextView.text.toString().toIntOrNull() ?: 0
             val minMakeupCount = minEditTextView.text.toString().toIntOrNull() ?: 0
