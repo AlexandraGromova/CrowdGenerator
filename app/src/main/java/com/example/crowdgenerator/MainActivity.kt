@@ -1,5 +1,6 @@
 package com.example.crowdgenerator
 
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,18 +21,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         minEditTextView = findViewById(R.id.minTextView)
         textView = findViewById(R.id.textView2)
         buttonMakeupVariants = findViewById(R.id.button_makeup_variants)
+
         buttonMakeupVariants.setOnClickListener {
-            Log.v(TAG, "Все хорошо")
-            val maxMakeupCount = try {
-                maxEditTextView.text.toString().toInt()
-            } catch (e: NumberFormatException) {
-                0
-            }
-            val minMakeupCount = try {
-                minEditTextView.text.toString().toInt()
-            } catch (e: NumberFormatException) {
-                0
-            }
+            val maxMakeupCount = maxEditTextView.text.toString().toIntOrNull() ?: 0
+            val minMakeupCount = minEditTextView.text.toString().toIntOrNull() ?: 0
             if (maxEditTextView.text.toString() < minEditTextView.text.toString()) {
                 val toast = Toast.makeText(
                     this,
@@ -43,9 +36,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             Log.v(TAG, "$maxMakeupCount")
             val makeupGroupGenerator = MakeupGroupGenerator(maxMakeupCount, minMakeupCount)
             makeupGroupGenerator.generator()
-            val text = Text(makeupGroupGenerator.makeupList)
-            text.preparation()
-            textView.text = text.finalText
+            val makeupHandler = MakeupHandler()
+            textView.text = makeupHandler.makeupListToString(makeupGroupGenerator.makeupList)
         }
     }
 }

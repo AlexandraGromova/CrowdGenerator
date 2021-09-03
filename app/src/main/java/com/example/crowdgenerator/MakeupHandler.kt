@@ -1,8 +1,8 @@
 package com.example.crowdgenerator
 
-class Text(var list: MutableList<Makeup>) {
-    var finalText ="All makeup ${list.size} \n"
-    fun preparation() {
+class MakeupHandler() {
+    fun makeupListToString(list: MutableList<Makeup>) : String {
+        var finalText ="All makeup ${list.size} \n"
        var i = 0
         while (i< list.size){
             var makeup = list[i]
@@ -12,5 +12,6 @@ class Text(var list: MutableList<Makeup>) {
                     "\n blush - ${makeup.blush} \n"
             i++
         }
+        return finalText
     }
 }
