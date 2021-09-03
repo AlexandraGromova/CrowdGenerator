@@ -9,7 +9,7 @@ import android.widget.*
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
-
+ //sfdsfsfdfsdfsfd
     private lateinit var maxEditTextView: EditText
     private lateinit var minEditTextView: EditText
     private lateinit var textView: TextView
